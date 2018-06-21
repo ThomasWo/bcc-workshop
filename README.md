@@ -1,1 +1,1 @@
-# BeerCityCode Workshop - Containers and Orchestration work Docker and Kubernetes
+# BeerCityCode Workshop - Containers and Orchestration with Docker and Kubernetes

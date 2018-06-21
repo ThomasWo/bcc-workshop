@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: hellorb-deployment
+  labels:
+    app: hellorb
+    version: "1"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hellorb
+  template:
+    metadata:
+      labels:
+        app: hellorb
+        version: "1"
+    spec:
+      containers:
+      - name: hellorb
+        image: gcr.io/twodarek-talks/hellorb:latest
+        # image: thomaswo/hellorb:latest
+        ports:
+        - containerPort: 80

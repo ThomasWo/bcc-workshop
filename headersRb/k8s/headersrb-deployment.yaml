@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: headersrb-deployment
+  labels:
+    app: headersrb
+    version: "1"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: headersrb
+  template:
+    metadata:
+      labels:
+        app: headersrb
+        version: "1"
+    spec:
+      containers:
+      - name: headersrb
+        image: gcr.io/twodarek-talks/headersrb:latest
+        # image: thomaswo/headersrb:latest
+        ports:
+        - containerPort: 80

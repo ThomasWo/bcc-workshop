@@ -1,24 +1,23 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: headersaas-deployment
+  name: hellopy-deployment
   labels:
-    app: headersaas
+    app: hellopy
     version: "1"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: headersaas
+      app: hellopy
   template:
     metadata:
       labels:
-        app: headersaas
+        app: hellopy
         version: "1"
     spec:
       containers:
-      - name: headersaas
-        image: gcr.io/twodarek-talks/headersaas:latest
-        # image: thomaswo/headersaas:latest
+      - name: hellopy
+        image: gcr.io/twodarek-talks/hellopy:latest
         ports:
         - containerPort: 8888

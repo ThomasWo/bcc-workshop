@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: headersaas-deployment
+  labels:
+    app: headersaas
+    version: "1"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: headersaas
+  template:
+    metadata:
+      labels:
+        app: headersaas
+        version: "1"
+    spec:
+      containers:
+      - name: headersaas
+        image: gcr.io/thomas-205714/headersaas:latest
+        ports:
+        - containerPort: 8888

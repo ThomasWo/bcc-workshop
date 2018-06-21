@@ -7,7 +7,7 @@ ENV MAIN_APP_FILE web.rb
 RUN apt-get update
 RUN apt-get install build-essential libmysqlclient-dev -y
 
-RUN echo "Starting your CN quic sinatra build."
+RUN echo "Starting your sinatra build."
 RUN mkdir -p /code
 WORKDIR /code
 

@@ -18,7 +18,14 @@ spec:
     spec:
       containers:
       - name: headersrb
-        # image: gcr.io/twodarek-talks/headersrb:latest
         image: thomaswo/headersrb:latest
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: pv-demo
+      volumes:
+      - name: pv-demo
+        persistentVolumeClaim:
+         claimName: pv-claim-demo
+

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-demo
+spec:
+  storageClassName: "gcs-pd"
+  capacity:
+    storage: 500G
+  accessModes:
+    - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: pd-name
+    fsType: ext4
+

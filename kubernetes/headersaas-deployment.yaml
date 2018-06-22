@@ -1,12 +1,12 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: headersaas-deployment
+  name: headersaas
   labels:
     app: headersaas
     version: "1"
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: headersaas

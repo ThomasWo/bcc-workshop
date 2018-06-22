@@ -1,0 +1,10 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: gcs-pd
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  zones: us-central1-a, us-central1-b
+  replication-type: none
+

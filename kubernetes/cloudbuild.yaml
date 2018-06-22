@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/headersRb', '.']
+  dir: 'headersRb'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/headersAAS', '.']
+  dir: 'headersAAS'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/helloPy', '.']
+  dir: 'hellyPy'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/helloRb', '.']
+  dir: 'helloRb'
+
+images: ['gcr.io/$PROJECT_ID/headersRb', 'gcr.io/$PROJECT_ID/headersAAs', 'gcr.io/$PROJECT_ID/helloPy', 'gcr.io/$PROJECT_ID/helloRb']
+timeout: 300s

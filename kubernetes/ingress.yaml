@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  tls:
+  - hosts:
+    - www.company.com
+    - headers.company.com
+    secretName: ssl-encoded-digicert
+  rules:
+  - host: www.company.com
+    http:
+      paths:
+      - backend:
+          serviceName: hellopy
+          servicePort: 80
+        path: /*
+  - host: headers.company.com
+    http:
+      paths:
+      - path:
+        backend:
+          serviceName: headersaas
+          servicePort: 8080
